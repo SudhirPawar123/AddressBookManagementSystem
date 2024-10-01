@@ -54,7 +54,7 @@ public AddressBook getAddressBook(String name){
                     System.out.println("Invalid choice. Try again.");
             }
         }while(choice!=0);
-
+      scanner.close();
     }
 
     public void displayAddressBooks() {
@@ -72,6 +72,8 @@ public AddressBook getAddressBook(String name){
     do{
         System.out.println("\nManaging Address Book: " + addressBook.getName());
         System.out.println("1. Add Contact");
+        System.out.println("2. Edit Contact");
+        System.out.println("0. Back to Main Menu");
         System.out.print("Enter your choice: ");
         choice = scanner.nextInt();
         scanner.nextLine();
@@ -96,6 +98,27 @@ public AddressBook getAddressBook(String name){
                 Contact contact = new Contact(firstName, lastName, address, city, state, zip, phoneNumber, email);
                 addressBook.addContact(contact);
                 System.out.println("Contact added successfully!");
+                break;
+            case 2:
+                System.out.print("Enter First Name of contact to edit: ");
+                String editFirstName = scanner.nextLine();
+                System.out.print("Enter Last Name of contact to edit: ");
+                String editLastName = scanner.nextLine();
+                System.out.print("Enter new Address: ");
+                String newAddress = scanner.nextLine();
+                System.out.print("Enter new City: ");
+                String newCity = scanner.nextLine();
+                System.out.print("Enter new State: ");
+                String newState = scanner.nextLine();
+                System.out.print("Enter new Zip: ");
+                String newZip = scanner.nextLine();
+                System.out.print("Enter new Phone Number: ");
+                String newPhoneNumber = scanner.nextLine();
+                System.out.print("Enter new Email: ");
+                String newEmail = scanner.nextLine();
+                Contact updatedContact = new Contact(editFirstName, editLastName, newAddress, newCity, newState, newZip, newPhoneNumber, newEmail);
+                addressBook.editContact(editFirstName, editLastName, updatedContact);
+                System.out.println("Contact updated successfully!");
                 break;
             case 4:
                 System.out.println(addressBook);
