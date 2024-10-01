@@ -15,7 +15,6 @@ public class AddressBook {
     public void addContact(Contact contact){
         contacts.add(contact);
     }
-
     public void editContact(String editFirstName, String editLastName, Contact updatedContact) {
         for (Contact contact : contacts) {
             if (contact.getFirstName().equalsIgnoreCase(editFirstName) && contact.getLastName().equalsIgnoreCase(editLastName)) {
@@ -36,5 +35,9 @@ public class AddressBook {
     @Override
     public String toString() {
         return "Address Book: " + name + "\nContacts:\n" + contacts;
+    }
+
+    public void deleteContact(String firstName, String lastName) {
+        contacts.removeIf(contact -> contact.getFirstName().equalsIgnoreCase(firstName) && contact.getLastName().equalsIgnoreCase(lastName));
     }
 }

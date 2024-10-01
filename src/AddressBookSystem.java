@@ -54,7 +54,7 @@ public AddressBook getAddressBook(String name){
                     System.out.println("Invalid choice. Try again.");
             }
         }while(choice!=0);
-      scanner.close();
+        scanner.close();
     }
 
     public void displayAddressBooks() {
@@ -73,6 +73,8 @@ public AddressBook getAddressBook(String name){
         System.out.println("\nManaging Address Book: " + addressBook.getName());
         System.out.println("1. Add Contact");
         System.out.println("2. Edit Contact");
+        System.out.println("3. Delete Contact");
+        System.out.println("4. Display Contacts");
         System.out.println("0. Back to Main Menu");
         System.out.print("Enter your choice: ");
         choice = scanner.nextInt();
@@ -120,8 +122,16 @@ public AddressBook getAddressBook(String name){
                 addressBook.editContact(editFirstName, editLastName, updatedContact);
                 System.out.println("Contact updated successfully!");
                 break;
+            case 3:
+                System.out.print("Enter First Name of contact to delete: ");
+                String delFirstName = scanner.nextLine();
+                System.out.print("Enter Last Name of contact to delete: ");
+                String delLastName = scanner.nextLine();
+                addressBook.deleteContact(delFirstName, delLastName);
+                System.out.println("Contact deleted successfully!");
+                break;
             case 4:
-                System.out.println(addressBook);
+                System.out.println(addressBook.getContacts());
                 break;
 
             case 0:
