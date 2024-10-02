@@ -28,6 +28,8 @@ public class Contact {
         public String getPhoneNumber() { return phoneNumber; }
         public String getEmail() { return email; }
 
+        public void setFirstName(String firstName){ this.firstName = firstName; }
+        public void setLastName(String lastName){ this.lastName = lastName; }
         public void setAddress(String address) { this.address = address; }
         public void setCity(String city) { this.city = city; }
         public void setState(String state) { this.state = state; }
