@@ -8,17 +8,6 @@ public class Contact {
         private String phoneNumber;
         private String email;
 
-        public Contact(String firstName, String lastName, String address, String city, String state, String zip, String phoneNumber, String email) {
-            this.firstName = firstName;
-            this.lastName = lastName;
-            this.address = address;
-            this.city = city;
-            this.state = state;
-            this.zip = zip;
-            this.phoneNumber = phoneNumber;
-            this.email = email;
-        }
-
         public String getFirstName() { return firstName; }
         public String getLastName() { return lastName; }
         public String getAddress() { return address; }
@@ -39,6 +28,7 @@ public class Contact {
 
         @Override
         public String toString() {
-            return firstName + " " + lastName + ", " + address + ", " + city + ", " + state + ", " + zip + ", " + phoneNumber + ", " + email;
+            return "FirstName: "+ firstName + " ,LastName: " + lastName + " ,Address: " + address
+                    + " ,City: " + city + " ,State: " + state + " ,Zip: " + zip + " ,PhoneNumber: " + phoneNumber + " ,Email: " + email;
         }
 }
